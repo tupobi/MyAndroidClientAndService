@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myandroidclient.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_testConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:text="点我测试连接！"
+        android:textColor="#ff00ff"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/btn_getJsonData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_testConnection"
+        android:layout_marginTop="8dp"
+        android:text="得到json数据" />
+
+    <Button
+        android:id="@+id/btn_postStringData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_getJsonData"
+        android:layout_marginTop="8dp"
+        android:text="发送文本信息" />
+
+    <Button
+        android:id="@+id/btn_multiFileUplaod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_postStringData"
+        android:layout_marginTop="8dp"
+        android:text="上传多个文件" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_multiFileUplaod"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pb_loading"
+        android:layout_centerHorizontal="true"
+        android:text="正在加载...."
+        android:textColor="@color/colorAccent"
+        android:visibility="invisible" />
+
+</RelativeLayout>

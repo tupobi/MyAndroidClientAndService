@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="未解析的jsonData"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/tv_unParsedJsonData"/>
+
+    <TextView
+        android:text="已解析的jsonData"
+        android:id="@+id/tv_parsedJsonData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_unParsedJsonData"
+        android:layout_marginTop="80dp"
+        android:textSize="16sp"/>
+
+    <Button
+        android:text="得到jsonData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_getJsonData" />
+
+</RelativeLayout>
