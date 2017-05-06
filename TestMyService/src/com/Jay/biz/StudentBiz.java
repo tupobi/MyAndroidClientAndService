@@ -15,7 +15,10 @@ public class StudentBiz {
 	public List<Student> getJsonData() {
 		return studentDao.getJsonData();
 	}
-	
-	
+
+	public Student getResponseData(String id) {
+		// TODO Auto-generated method stub
+		return studentDao.getResponseData(id);
+	}
 
 }

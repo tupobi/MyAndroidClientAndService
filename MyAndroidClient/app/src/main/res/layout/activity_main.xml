@@ -33,18 +33,26 @@
         android:text="发送文本信息" />
 
     <Button
-        android:id="@+id/btn_multiFileUplaod"
+        android:id="@+id/btn_multiFileUpload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_postStringData"
         android:layout_marginTop="8dp"
         android:text="上传多个文件" />
 
+    <Button
+        android:text="下载文件"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/btn_multiFileUpload"
+        android:id="@+id/btn_downloadFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <ProgressBar
         android:id="@+id/pb_loading"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_below="@id/btn_multiFileUplaod"
+        android:layout_below="@id/btn_downloadFile"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:visibility="invisible" />
@@ -55,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/pb_loading"
         android:layout_centerHorizontal="true"
-        android:text="正在加载...."
+        android:text="正在连接...."
         android:textColor="@color/colorAccent"
         android:visibility="invisible" />
 

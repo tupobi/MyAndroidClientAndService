@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_filePath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:text="文件1：PE-TL10/内部存储/183/11.txt\n 文件2：PE-TL10/内部存储/183/12.jpg" />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tv_filePath"
+        android:text="上传多个文件"
+        android:id="@+id/btn_multiFileUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

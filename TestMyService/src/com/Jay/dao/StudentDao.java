@@ -27,12 +27,37 @@ public class StudentDao {
 			while(rs.next()){
 				students.add(new Student(rs.getString(1), rs.getString(2), rs.getFloat(3)));
 			}
+			connection.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
 		return students;
+	}
+
+	public Student getResponseData(String id) {
+		Connection  connection = jdbcConnectionUtil.getConnection_jdbc("jdbc:mysql://localhost:3306/mydatabase", "root", "123");
+		String sql = "SELECT * FROM student WHERE id = ?";
+		Student student = null;
+		PreparedStatement ps;
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, id);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				student = new Student();
+				student.setId(rs.getString(1));
+				student.setName(rs.getString(2));
+				student.setScore(rs.getFloat(3));
+			}
+			connection.close();
+			return student;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

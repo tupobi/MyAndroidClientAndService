@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.administrator.myandroidclient.com.Jay.GsonUtil.GsonUtil;
 import com.example.administrator.myandroidclient.com.Jay.entity.Student;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -77,7 +78,7 @@ public class GetJsonData extends AppCompatActivity {
     private String parseJSONWithGSON(String jsonData) {
         Log.e("------------>", "isC = " + isConnected);
         Gson gson = new Gson();
-        List<Student> temp = gson.fromJson(jsonData, new TypeToken<ArrayList<Student>>() {}.getType());
+        List<Student> temp = GsonUtil.jsonList2BeanList(jsonData, Student.class);
         StringBuffer sb = new StringBuffer();
         for (Student student : temp) {
             sb.append("id:" + student.getId() + ", name:" + student.getName() + ", score:" + student.getScore() + "\n");

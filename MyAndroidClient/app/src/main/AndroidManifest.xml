@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".GetJsonData"></activity>
+        <activity android:name=".PostData2MyService"></activity>
+        <activity android:name=".AtyMultiFileUpload"></activity>
+        <activity android:name=".DownloadFile"></activity>
     </application>
 
 </manifest>

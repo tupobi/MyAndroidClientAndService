@@ -2,23 +2,21 @@ package com.Jay.androidClient;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import com.Jay.biz.StudentBiz;
 import com.Jay.entity.Student;
 
-public class SendMessageToAndroidClient extends HttpServlet {
+public class ResponseData extends HttpServlet {
 	private StudentBiz studentBiz;
 
-	public SendMessageToAndroidClient() {
+	public ResponseData() {
 		super();
 		studentBiz = new StudentBiz();
 	}
@@ -34,8 +32,18 @@ public class SendMessageToAndroidClient extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		List<Student> students = studentBiz.getJsonData();
-		out.write(JsonUtil.beanList2JsonList(students));
+
+		Student student = studentBiz
+				.getResponseData(request.getParameter("id"));
+		if (student == null) {
+			out.print("false");
+		} else {
+			String responseJsonData = JsonUtil.bean2Json(student);
+			out.print(responseJsonData);
+			
+			Student temp = JsonUtil.json2Bean(responseJsonData, Student.class);
+			System.out.println(temp.getName() + "id:" + temp.getId() + ",name:" + temp.getName() + ",score:" + temp.getScore());
+		}
 		out.flush();
 		out.close();
 	}
